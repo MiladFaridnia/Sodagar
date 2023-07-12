@@ -1,4 +1,4 @@
-package com.faridnia.sodagar.ui.theme
+package com.faridnia.sodagar.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
