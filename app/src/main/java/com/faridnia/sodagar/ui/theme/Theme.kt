@@ -16,15 +16,21 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = Purple40,
+    secondary = PurpleGrey40,
+    tertiary = Pink40,
+    background = PurpleGrey80,
+    onBackground = Purple40,
+    onPrimary = Purple80
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+    primary = PurpleGrey80,
+    secondary = Pink80,
+    tertiary = Pink40,
+    background = PurpleGrey80,
+    onBackground = Purple40,
+    onPrimary = Purple40
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -40,7 +46,6 @@ private val LightColorScheme = lightColorScheme(
 @Composable
 fun SodagarTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
@@ -65,6 +70,7 @@ fun SodagarTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
+        shapes = Shapes,
         content = content
     )
 }
