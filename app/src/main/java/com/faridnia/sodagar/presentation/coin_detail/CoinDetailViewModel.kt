@@ -8,10 +8,13 @@ import androidx.lifecycle.viewModelScope
 import com.faridnia.sodagar.domain.use_case.get_coin_list.GetCoinDetailUseCase
 import com.faridnia.sodagar.util.Constants
 import com.faridnia.sodagar.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
+
+@HiltViewModel
 class CoinDetailViewModel @Inject constructor(
     private val getCoinDetailUseCase: GetCoinDetailUseCase,
     savedStateHandle: SavedStateHandle
