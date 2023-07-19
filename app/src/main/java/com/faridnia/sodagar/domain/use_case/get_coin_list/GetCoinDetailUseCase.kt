@@ -10,23 +10,18 @@ import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
-class GetCoinListUseCase @Inject constructor(
+class GetCoinDetailUseCase @Inject constructor(
     private val repository: CoinRepository
 ) {
 
     operator fun invoke(coinId: String): Flow<Resource<CoinDetail>> = flow {
         try {
-
             emit(Resource.Loading())
             val coin = repository.getCoinById(coinId).toCoinDetail()
             emit(Resource.Success(coin))
-
         } catch (e: HttpException) {
-
             emit(Resource.Error(e.localizedMessage ?: "Error occurred"))
-
         } catch (e: IOException) {
-
             emit(
                 Resource.Error(
                     e.localizedMessage ?: "Couldn't reach server. Check your internet connection"
